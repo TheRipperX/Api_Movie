@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+<!--    poster-->
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/card_img"
+        android:background="@color/darkbackb"
+        android:backgroundTint="@color/darkbackb"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:cardElevation="@dimen/_5mdp"
+        android:layout_margin="@dimen/_3mdp"
+        android:layout_width="@dimen/_110mdp"
+        android:layout_height="@dimen/_140mdp"
+        tools:ignore="MissingConstraints">
+
+        <ImageView
+            android:id="@+id/img_poster"
+            android:layout_width="@dimen/_110mdp"
+            android:scaleType="centerCrop"
+            android:padding="@dimen/_1mdp"
+            android:layout_height="@dimen/_140mdp"
+            tools:srcCompat="@tools:sample/avatars"
+            tools:ignore="ContentDescription" />
+    </androidx.cardview.widget.CardView>
+
+<!--    text name video-->
+    <TextView
+        android:id="@+id/txt_name_video"
+        app:layout_constraintTop_toTopOf="@id/card_img"
+        android:layout_margin="@dimen/_5mdp"
+        android:maxLines="1"
+        android:ellipsize="end"
+        android:textColor="@color/khaki"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintLeft_toRightOf="@id/card_img"
+        style="@style/textLastMovies"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        tools:ignore="MissingConstraints" />
+
+    <!--    text stars video-->
+    <TextView
+        android:id="@+id/txt_stars_video"
+        app:layout_constraintTop_toBottomOf="@id/txt_name_video"
+        android:layout_margin="@dimen/_5mdp"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintLeft_toRightOf="@id/card_img"
+        style="@style/textLastMovies"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        tools:ignore="MissingConstraints"
+        android:drawablePadding="@dimen/_5mdp"
+        app:drawableStartCompat="@drawable/ic_baseline_star_24" />
+
+    <!--    text country video-->
+    <TextView
+        android:id="@+id/txt_country_video"
+        app:layout_constraintTop_toBottomOf="@id/txt_stars_video"
+        android:layout_margin="@dimen/_5mdp"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintLeft_toRightOf="@id/card_img"
+        style="@style/textLastMovies"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        tools:ignore="MissingConstraints"
+        android:drawablePadding="@dimen/_5mdp"
+        app:drawableStartCompat="@drawable/ic_baseline_account_balance_24" />
+
+    <!--    text name video-->
+    <TextView
+        android:id="@+id/txt_years_video"
+        app:layout_constraintTop_toBottomOf="@id/txt_country_video"
+        android:layout_margin="@dimen/_5mdp"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintLeft_toRightOf="@id/card_img"
+        style="@style/textLastMovies"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        tools:ignore="MissingConstraints"
+        android:drawablePadding="@dimen/_5mdp"
+        app:drawableStartCompat="@drawable/ic_baseline_date_range_24" />
+
+    <!--    text name video-->
+    <TextView
+        android:id="@+id/txt_info_video"
+        app:layout_constraintTop_toBottomOf="@id/txt_years_video"
+        android:layout_marginTop="@dimen/_10mdp"
+        android:layout_marginHorizontal="@dimen/_10mdp"
+        android:text="@string/moreInfo"
+        app:layout_constraintLeft_toRightOf="@id/card_img"
+        style="@style/textLastMovies"
+        android:textColor="@color/purple_200"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        tools:ignore="MissingConstraints"
+        app:drawableEndCompat="@drawable/ic_baseline_arrow_forward_ios_24" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

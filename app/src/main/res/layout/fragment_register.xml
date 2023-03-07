@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".ui.register.RegisterFragment">
+
+<!--    image login -->
+    <androidx.cardview.widget.CardView
+        android:layout_width="@dimen/_120mdp"
+        app:cardElevation="@dimen/_150mdp"
+        android:id="@+id/cardImage"
+        app:cardCornerRadius="@dimen/_15mdp"
+        android:layout_marginTop="@dimen/_40font_mdp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:layout_height="@dimen/_120mdp">
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:id="@+id/img_login"
+            android:src="@drawable/login"
+            android:layout_height="match_parent"
+            tools:ignore="ContentDescription" />
+
+    </androidx.cardview.widget.CardView>
+
+<!--input text name-->
+    <com.google.android.material.textfield.TextInputLayout
+        android:layout_width="match_parent"
+        android:id="@+id/edt_name_"
+        android:layout_marginTop="@dimen/_25mdp"
+        android:layout_marginLeft="@dimen/_10mdp"
+        android:layout_marginRight="@dimen/_10mdp"
+        android:layout_marginBottom="@dimen/_10mdp"
+        style="@style/inputTextLogin"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:startIconDrawable="@drawable/ic_baseline_supervised_user_circle_24"
+        app:layout_constraintTop_toBottomOf="@id/cardImage"
+        android:layout_height="wrap_content">
+
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:layout_width="match_parent"
+            style="@style/textStyleApp"
+            android:hint="@string/editName"
+            android:id="@+id/edt_name_edit"
+            android:maxLength="25"
+            android:layout_height="match_parent"/>
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+<!--input text email-->
+    <com.google.android.material.textfield.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_margin="@dimen/_10mdp"
+        style="@style/inputTextLogin"
+        android:hint="@string/editEmail"
+        android:id="@+id/edt_email_"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:startIconDrawable="@drawable/ic_baseline_email_24"
+        app:layout_constraintTop_toBottomOf="@id/edt_name_"
+        android:layout_height="wrap_content">
+
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:layout_width="match_parent"
+            style="@style/textStyleApp"
+            android:id="@+id/edt_email_edit"
+            android:maxLength="25"
+            android:layout_height="match_parent"/>
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+<!--input text password-->
+    <com.google.android.material.textfield.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_margin="@dimen/_10mdp"
+        style="@style/inputTextLogin"
+        android:hint="@string/editPass"
+        android:id="@+id/edt_pass_"
+        app:passwordToggleTint="@color/gold"
+        app:passwordToggleEnabled="true"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:startIconDrawable="@drawable/ic_baseline_lock_24"
+        app:layout_constraintTop_toBottomOf="@id/edt_email_"
+        android:layout_height="wrap_content">
+
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:layout_width="match_parent"
+            style="@style/textStyleApp"
+            android:id="@+id/edt_pass_edit"
+            android:maxLength="25"
+            android:layout_height="match_parent"/>
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+<!--    button login-->
+    <com.google.android.material.button.MaterialButton
+        android:layout_width="@dimen/_250mdp"
+        android:id="@+id/btn_login_"
+        android:text="@string/submit"
+        android:textColor="@color/darkbackb"
+        android:textSize="@dimen/_18font_mdp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/edt_pass_"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:layout_height="wrap_content"/>
+
+<!--    progress bar login-->
+    <ProgressBar
+        android:id="@+id/progress_circular"
+        android:layout_width="wrap_content"
+        android:visibility="gone"
+        app:layout_constraintRight_toRightOf="@id/btn_login_"
+        app:layout_constraintLeft_toLeftOf="@id/btn_login_"
+        app:layout_constraintBottom_toBottomOf="@id/btn_login_"
+        app:layout_constraintTop_toTopOf="@id/btn_login_"
+        android:layout_height="wrap_content"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

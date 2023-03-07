@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <androidx.core.widget.NestedScrollView
+        android:id="@+id/nestedScrollView3"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:fillViewport="true"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="SpeakableTextPresentCheck">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/conLay"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <!--top movies video-->
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/conTop"
+                android:layout_width="match_parent"
+                app:layout_constraintTop_toTopOf="@id/conLay"
+                app:layout_constraintRight_toRightOf="@id/conLay"
+                app:layout_constraintLeft_toLeftOf="@id/conLay"
+                android:layout_height="wrap_content" >
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/recTopMovieHome"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+
+                <me.relex.circleindicator.CircleIndicator2
+                    android:id="@+id/indicatorTopMovieHome"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/_4mdp"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/recTopMovieHome"
+                    tools:ignore="MissingConstraints" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+<!--            gneres movies list video-->
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/conGenres"
+                app:layout_constraintTop_toBottomOf="@id/conTop"
+                app:layout_constraintLeft_toLeftOf="@id/conLay"
+                app:layout_constraintRight_toRightOf="@id/conLay"
+                android:layout_margin="@dimen/_2mdp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:id="@+id/textViewGenres"
+                    android:layout_width="match_parent"
+                    android:textSize="@dimen/_13font_mdp"
+                    android:textColor="@color/gold"
+                    android:textColorHint="@color/teal_700"
+                    app:layout_constraintTop_toTopOf="@id/conGenres"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    android:layout_height="wrap_content"
+                    tools:ignore="HardcodedText,MissingConstraints" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/recGenresItems"
+                    android:layout_width="match_parent"
+                    android:clipToPadding="false"
+                    android:padding="@dimen/_5mdp"
+                    app:layout_constraintTop_toBottomOf="@id/textViewGenres"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    android:layout_height="wrap_content" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/conBot"
+                app:layout_constraintTop_toBottomOf="@id/conGenres"
+                app:layout_constraintLeft_toLeftOf="@id/conLay"
+                app:layout_constraintRight_toRightOf="@id/conLay"
+                app:layout_constraintBottom_toBottomOf="parent"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:id="@+id/txt_lastmovie"
+                    android:layout_width="match_parent"
+                    android:layout_margin="@dimen/_2mdp"
+                    android:textSize="@dimen/_13font_mdp"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/recGenresItems"
+                    style="@style/textStyleApp"
+                    android:layout_height="wrap_content"
+                    tools:ignore="MissingConstraints,NotSibling" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rec_bot"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    android:layout_marginTop="@dimen/_5mdp"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/txt_lastmovie"
+                    app:layout_constraintBottom_toBottomOf="@id/conLay"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    tools:ignore="NotSibling" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.core.widget.NestedScrollView>
+
+<!--    scroll view-->
+
+    <ProgressBar
+        android:id="@+id/progress_circular"
+        android:layout_width="wrap_content"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_height="wrap_content"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

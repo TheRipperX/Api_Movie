@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_main"
+    app:startDestination="@id/splashFragment">
+
+    <action
+        android:id="@+id/actions_to_detail"
+        app:destination="@id/detailsFragment" />
+
+    <fragment
+        android:id="@+id/detailsFragment"
+        android:name="com.example.filmapp.ui.detail.DetailsFragment"
+        android:label="fragment_details"
+        tools:layout="@layout/fragment_details" >
+        <argument
+            android:name="movieId"
+            app:argType="integer" />
+    </fragment>
+    <fragment
+        android:id="@+id/favoriteFragment"
+        android:name="com.example.filmapp.ui.favorite.FavoriteFragment"
+        android:label="fragment_favorite"
+        tools:layout="@layout/fragment_favorite" />
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="com.example.filmapp.ui.home.HomeFragment"
+        android:label="fragment_home"
+        tools:layout="@layout/fragment_home" />
+    <fragment
+        android:id="@+id/registerFragment"
+        android:name="com.example.filmapp.ui.register.RegisterFragment"
+        android:label="fragment_register"
+        tools:layout="@layout/fragment_register" />
+    <fragment
+        android:id="@+id/searchFragment"
+        android:name="com.example.filmapp.ui.search.SearchFragment"
+        android:label="fragment_search"
+        tools:layout="@layout/fragment_search" />
+    <fragment
+        android:id="@+id/splashFragment"
+        android:name="com.example.filmapp.ui.splash.SplashFragment"
+        android:label="fragment_splash"
+        tools:layout="@layout/fragment_splash" >
+
+    </fragment>
+
+    <action
+        android:id="@+id/action_splashFragment_to_registerFragment"
+        app:destination="@id/registerFragment" />
+
+    <action
+        android:id="@+id/actions_to_home"
+        app:destination="@id/homeFragment" />
+
+
+</navigation>

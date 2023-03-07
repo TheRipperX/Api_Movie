@@ -1,0 +1,267 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.detail.DetailsFragment">
+
+    <androidx.core.widget.NestedScrollView
+        android:id="@+id/nestedScrollView"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:fillViewport="true"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="SpeakableTextPresentCheck">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/con_scroll_ch"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" >
+
+<!--        poster layout       -->
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/con_poster_lay"
+                android:layout_width="match_parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                android:layout_height="@dimen/_400mdp">
+
+<!--                poster big image-->
+                <ImageView
+                    android:id="@+id/img_big_poster"
+                    android:scaleType="centerCrop"
+                    android:layout_width="match_parent"
+                    android:alpha="0.1"
+                    android:layout_height="match_parent"
+                    tools:ignore="ContentDescription" />
+<!--                poster normal image-->
+                <com.google.android.material.imageview.ShapeableImageView
+                    android:id="@+id/img_normal_poster"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    android:layout_width="@dimen/_200mdp"
+                    android:scaleType="centerCrop"
+                    app:shapeAppearanceOverlay="@style/img_detail_shape"
+                    android:layout_height="@dimen/_250mdp"/>
+
+                <ImageView
+                    android:id="@+id/img_back"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    android:background="@drawable/shape_img_detial"
+                    android:layout_margin="@dimen/_10mdp"
+                    android:padding="@dimen/_10mdp"
+                    android:src="@drawable/ic_baseline_arrow_back_24"
+                    android:layout_width="@dimen/_40mdp"
+                    android:layout_height="@dimen/_40mdp"
+                    tools:ignore="ContentDescription" />
+
+                <ImageView
+                    android:id="@+id/img_fav"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    android:background="@drawable/shape_img_detial"
+                    android:layout_margin="@dimen/_10mdp"
+                    android:padding="@dimen/_10mdp"
+                    android:src="@drawable/ic_baseline_favorite_border_24_empty"
+                    android:layout_width="@dimen/_40mdp"
+                    android:layout_height="@dimen/_40mdp"
+                    tools:ignore="ContentDescription" />
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/con_bot_color"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintTop_toBottomOf="@id/img_normal_poster"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent">
+
+                    <TextView
+                        android:id="@+id/txt_title_video"
+                        android:padding="@dimen/_5mdp"
+                        android:layout_marginBottom="@dimen/_10mdp"
+                        android:maxLines="1"
+                        android:gravity="center"
+                        android:textSize="@dimen/_16font_mdp"
+                        android:hint="The Godfather"
+                        style="@style/textHomeFragment"
+                        android:ellipsize="end"
+                        app:layout_constraintBottom_toTopOf="@id/con_time_year_star_lay"
+                        app:layout_constraintRight_toRightOf="parent"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        tools:ignore="HardcodedText,NotSibling" />
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/con_time_year_star_lay"
+                        android:layout_marginBottom="@dimen/_15mdp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintRight_toRightOf="parent"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <TextView
+                            android:id="@+id/txt_detail_stars"
+                            style="@style/textDetailFragment"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:drawablePadding="@dimen/_5mdp"
+                            android:hint="9.9"
+                            app:drawableStartCompat="@drawable/ic_baseline_star_24"
+                            app:layout_constraintEnd_toStartOf="@+id/txt_time_stars"
+                            app:layout_constraintHorizontal_bias="0.5"
+                            app:layout_constraintStart_toStartOf="parent"
+                            tools:ignore="HardcodedText,MissingConstraints" />
+
+                        <TextView
+                            android:id="@+id/txt_time_stars"
+                            style="@style/textDetailFragment"
+                            android:drawablePadding="@dimen/_5mdp"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:hint="150"
+                            app:drawableStartCompat="@drawable/ic_baseline_access_time_24"
+                            app:layout_constraintEnd_toStartOf="@+id/txt_year_stars"
+                            app:layout_constraintHorizontal_bias="0.5"
+                            app:layout_constraintStart_toEndOf="@+id/txt_detail_stars"
+                            tools:ignore="HardcodedText,MissingConstraints" />
+
+                        <TextView
+                            android:id="@+id/txt_year_stars"
+                            style="@style/textDetailFragment"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:drawablePadding="@dimen/_5mdp"
+                            android:hint="2020"
+                            app:drawableStartCompat="@drawable/ic_baseline_date_range_24"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintHorizontal_bias="0.5"
+                            app:layout_constraintStart_toEndOf="@+id/txt_time_stars"
+                            tools:ignore="HardcodedText,MissingConstraints" />
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <!--        summery layout       -->
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/con_summery_lay"
+                android:layout_width="match_parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/con_poster_lay"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:id="@+id/txt_summary_title"
+                    style="@style/textHomeFragment"
+                    android:padding="@dimen/_5mdp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    android:drawablePadding="@dimen/_5mdp"
+                    android:text="@string/summary"
+                    app:drawableStartCompat="@drawable/ic_baseline_info_24"
+                    app:layout_constraintHorizontal_bias="0.5"
+                    tools:ignore="HardcodedText,MissingConstraints" />
+
+                <TextView
+                    android:id="@+id/txt_summary_api"
+                    style="@style/textDetailFragment"
+                    android:layout_width="match_parent"
+                    android:padding="@dimen/_5mdp"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintTop_toBottomOf="@id/txt_summary_title"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    android:textSize="@dimen/_10font_mdp"
+                    app:layout_constraintHorizontal_bias="0.5"
+                    tools:ignore="HardcodedText,MissingConstraints" />
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <!--        actors text layout       -->
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/con_actors_lay"
+                android:layout_width="match_parent"
+                app:layout_constraintTop_toBottomOf="@id/con_summery_lay"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintRight_toLeftOf="parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:id="@+id/txt_actors_title"
+                    style="@style/textHomeFragment"
+                    android:padding="@dimen/_5mdp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    android:drawablePadding="@dimen/_5mdp"
+                    android:text="@string/actors"
+                    app:drawableStartCompat="@drawable/ic_baseline_account_circle_24"
+                    app:layout_constraintHorizontal_bias="0.5"
+                    tools:ignore="HardcodedText,MissingConstraints" />
+
+                <TextView
+                    android:id="@+id/txt_actors_api"
+                    style="@style/textDetailFragment"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="@dimen/_5mdp"
+                    app:layout_constraintTop_toBottomOf="@id/txt_actors_title"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    android:textSize="@dimen/_10font_mdp"
+                    app:layout_constraintHorizontal_bias="0.5"
+                    tools:ignore="HardcodedText,MissingConstraints" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <!--        actors image layout       -->
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/con_act_img_lay"
+                android:layout_width="match_parent"
+                android:layout_margin="@dimen/_5mdp"
+                app:layout_constraintTop_toBottomOf="@id/con_actors_lay"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintLeft_toLeftOf="parent"
+                android:layout_height="0dp">
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rec_actors_image"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"/>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.core.widget.NestedScrollView>
+
+    <ProgressBar
+        android:id="@+id/progress_circular"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

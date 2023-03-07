@@ -1,0 +1,29 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <string name="app_name">videoApp</string>
+
+    <string name="fill_blank_fragment">Hello blank Fragment</string>
+    <string name="home">Home</string>
+    <string name="appName">Video Player Free</string>
+    <string name="no_internet">Check Connections</string>
+    <string name="search">Search</string>
+    <string name="favorite">Favorite</string>
+    <string name="name">Name</string>
+    <string name="email">Email</string>
+    <string name="password">Password</string>
+    <string name="submit">Submit</string>
+    <string name="fillAllFields">Please fill all fields</string>
+    <string name="genres">Genres</string>
+    <string name="lastMovie">Last Movie</string>
+    <string name="moreInfo">Get More Info</string>
+    <string name="emptyList">Not found any items!</string>
+    <string name="searchHear" tools:ignore="TypographyEllipsis">Search...</string>
+    <string name="summary">Summary</string>
+    <string name="writers">Writers</string>
+    <string name="actors">Actors</string>
+    <string name="editName">enter name</string>
+    <string name="editEmail">enter email</string>
+    <string name="editPass">enter password</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+</resources>
