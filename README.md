@@ -1,2 +1,2 @@
 # movieApiFreeApp
-movie api free app 
+movie api free app
